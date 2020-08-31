@@ -5,4 +5,4 @@
   tasks:
   - raw: "show ip int brief"
     register: show
-  - debug: var=vars
+  - debug: var=show.stdout_lines
