@@ -1,0 +1,8 @@
+---
+- name: Testing first playbook
+  hosts: routers
+  gather_facts: no
+  tasks:
+  - raw: "show ip int brief"
+    register: show
+  - debug: var=vars
