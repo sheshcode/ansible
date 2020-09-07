@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  name: Create directory
+  connection: local
+  tasks:
+  - file: path=configs state=absent
+    run_once: true
+  - file: path=configs state=directory
+    run_once: true 
