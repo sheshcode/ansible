@@ -1,0 +1,13 @@
+---
+- name: Ping playbook
+  hosts: provider_edge
+  vars_files: [ ping_targets.yml ]
+  tasks:
+  - ios_command:
+      commands: 
+      - ping {{host}}
+      - show ip int br
+    register: results
+    loop: "{{ping_targets}}"
+    loop_control:
+      loop_var: host
