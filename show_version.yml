@@ -1,0 +1,9 @@
+---
+- name: show version
+  hosts: provider_edge
+  gather_facts: no
+  tasks:
+  - ios_command:
+      commands: show version | inc uptime
+    register: results
+  - debug: var=results.stdout_lines[0][0]
