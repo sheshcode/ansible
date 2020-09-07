@@ -1,8 +1,8 @@
 ---
 - name: Testing first playbook
-  hosts: routers
+  hosts: provider_edge
   gather_facts: no
   tasks:
   - raw: "show ip int brief"
     register: show
-  - debug: var=show.stdout_lines
+  - debug: var=vars

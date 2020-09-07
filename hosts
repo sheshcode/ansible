@@ -1,9 +1,14 @@
-[routers]
-R1 ansible_host=172.16.1.144
-R2 ansible_host=172.16.1.145
-R3 ansible_host=172.16.1.146
+[provider]
+P1 ansible_host=172.16.1.144
+P2 ansible_host=172.16.1.145
+P3 ansible_host=172.16.1.146
 
-[all:vars]
-ansible_user = cisco
-ansible_ssh_pass = cisco
-ansible_python_interpreter = /usr/bin/python3
+
+[provider_edge]
+PE1 ansible_host=172.16.1.148
+PE2 ansible_host=172.16.1.100
+
+
+[customer_edge]
+CE1 ansible_host=172.16.1.147
+CE2 ansible_host=172.16.1.149
